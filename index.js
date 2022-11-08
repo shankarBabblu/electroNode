@@ -31,7 +31,7 @@ app.get('/users', (request, response) => {
 app.post('/user', (request, response) => {
     let username = request.body.username;
     let password = request.body.password
-    let query = `select * from users where username = ${username} and password = ${password}`
+    let query = `select * from users where username = '${username}' and password = '${password}'`
     connection.query(query, (err, result) => {
         if(err)  response.send(err);
         response.send(result)
