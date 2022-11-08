@@ -38,6 +38,8 @@ app.post('/user', (request, response) => {
     })
 })
 
-app.listen(process.env.PORT || 3000, ()=> {
-    console.log('we are live and running')
+let port = process.env.PORT || 3000
+
+app.listen(port, ()=> {
+    console.log(`we are live and running on ${port}`)
 })
